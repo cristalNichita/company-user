@@ -27,12 +27,13 @@ class UserService
 
         try {
             $user = $this->userRepository->create($data);
+
             $this->userRepository->update([
                 'verification_token' => Str::random(50),
                 'role' => 'user',
             ], $user);
 
-            Notification::send($user, new SendVerificationMail(''));
+//            Notification::send($user, new SendVerificationMail(''));
 
             DB::commit();
 
