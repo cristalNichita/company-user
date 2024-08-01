@@ -91,7 +91,7 @@
                                                         <div class="menu-item">
                                                             <a class="menu-link" href="{{ $password->url }}" target="_blank">
                                                                 <span class="menu-icon">
-                                                                    <i class="ki-outline ki-exit-right-corner text-1.5xl text-gray-600"></i>
+                                                                    <i class="ki-outline ki-exit-right-corner text-gray-600"></i>
                                                                 </span>
                                                                 <span class="menu-title">
                                                                     Launch
@@ -513,47 +513,44 @@
     {{--Share Password Modal--}}
     <div class="modal fade drawer-backdrop" tabindex="-1" role="dialog" aria-labelledby="shareModalLabel" aria-hidden="true" id="share_password_modal">
         <div class="modal-content max-w-[500px] top-5 lg:top-[15%]">
-            <div class="modal-header p-3">
-                <h3 class="modal-title text-1.5xl p-2" id="shareModalLabel">Share Password</h3>
-                <label class="text-gray-600 font-semibold text-2sm px-2">
+            <div class="modal-header p-5">
+                <h3 class="modal-title text-1.5xl px-3" id="shareModalLabel">Share Password</h3>
+                <label class="text-gray-600 text-2sm px-3">
                     Choose the password and user you want to share.
                 </label>
             </div>
             <hr>
-            <div class="modal-body grid gap-5 px-0 py-5">
-                <div class="card mx-5 pb-2.5">
-                    <div class="flex flex-col gap-2.5">
-                        <div class="card-header">
-                            <h3 class="card-title">Application Name</h3>
-                        </div>
-                        <div class="card-body grid gap-5 py-1">
-                            <div class="w-full">
-                                <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                    <input type="text" class="input" name="password_app" id="password_search" placeholder="e.g. Confluence">
-                                </div>
-                            </div>
-                            <div id="search-pass-results"></div>
-                        </div>
+            <div class="modal-body grid gap-0 px-0 py-2.5">
+                <div class="flex flex-col gap-0">
+                    <div class="card-header-without-outline">
+                        <h3 class="card-title">Application Name</h3>
                     </div>
-                </div>
-                <div class="card mx-5 pb-2.5">
-                    <div class="flex flex-col gap-2.5">
-                        <div class="card-header">
-                            <h3 class="card-title">Share with</h3>
-                        </div>
-                        <div class="card-body grid gap-5 py-1">
-                            <div class="w-full">
-                                <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                    <input type="text" class="input" placeholder="Joe Doe">
-                                </div>
+                    <div class="card-body-second grid gap-1.5">
+                        <div class="w-full">
+                            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                <input type="text" class="input" name="password_app" id="password_search" placeholder="e.g. Confluence">
                             </div>
                         </div>
+                        <div id="search-pass-results"></div>
                     </div>
                 </div>
-                <div class="flex px-5 gap-4 justify-end">
+                <div class="flex flex-col gap-0">
+                    <div class="card-header-without-outline">
+                        <h3 class="card-title">Share with</h3>
+                    </div>
+                    <div class="card-body-second grid gap-1.5">
+                        <div class="w-full">
+                            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                <input type="text" class="input" placeholder="Joe Doe">
+                            </div>
+                        </div>
+                        <div id="search-pass-results"></div>
+                    </div>
+                </div>
+                <div class="flex px-5 gap-4 justify-end pt-3.5 pb-1.5">
                     <button class="btn btn-light text-center close-modal">Cancel</button>
                     <button class="btn btn-primary confirm-password">
-                        Ok
+                        Share
                     </button>
                 </div>
             </div>
