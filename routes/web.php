@@ -118,6 +118,7 @@ Route::middleware(['auth', 'checkUser'])->group(function () {
         Route::post('update-email', 'SettingController@updateEmailAddress')->name('updateEmailAddress');
         Route::post('deleteAccount', 'SettingController@deleteAccount')->name('deleteAccount');
         Route::post('verify-otp-app', 'SettingController@verify2FAAuthentication')->name('verifyOtpApp');
+        Route::post('purge-vault', 'SettingController@purgeVault')->name('purgeVault');
     });
 
     // Front Dashboard Controller

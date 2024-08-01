@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\AuthenticationHelper;
+use App\Models\Password;
 use App\Services\SettingsService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -398,5 +399,14 @@ class SettingController extends Controller
             return response()->json(['success' => true]);
         }
         return response()->json(['success' => false]);
+    }
+
+    public function purgeVault(): RedirectResponse
+    {
+        if (Password::where('user_id', Auth::id())->delete()) {
+            return redirect()->back()->with('success', 'Purged successfully!');
+        }
+
+        return redirect()->back()->with('error', 'Something went wrong!');
     }
 }

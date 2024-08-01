@@ -238,7 +238,13 @@
                                     </div>
                                 </div>
                                 <div class="flex justify-start gap-2.5 pt-7">
-                                    <form action="" method="PoST">
+                                    <form action="{{ route('logout') }}" method="GET">
+                                        @csrf
+                                        <button type="button" class="btn btn-danger save-changes">
+                                            Deauthorize session
+                                        </button>
+                                    </form>
+                                    <form action="{{ route('purgeVault') }}" method="POST">
                                         @csrf
                                         <button type="button" class="btn btn-danger save-changes">
                                             Purge Vault
