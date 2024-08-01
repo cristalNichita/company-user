@@ -1,0 +1,222 @@
+body .create-custom-role-box-bottom-head {
+    padding: 20px;
+}
+
+.update-status span {
+    margin-right: 10px;
+}
+
+.padding-box {
+    padding: 30px;
+}
+
+.accordian-parent-box .accordion-item {
+    background: hsla(0, 0%, 100%, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    color: #fff;
+}
+
+.accordian-parent-box .accordion-item+.accordion-item {
+    margin-top: 20px;
+}
+
+.accordian-parent-box .accordion-item .accordion-button {
+    background: hsla(0, 0%, 100%, 0.1);
+    color: #fff;
+    overflow: hidden;
+    box-shadow: none;
+    padding: 25px;
+    border: 1px solid hsla(82, 100%, 50%, 1);
+}
+
+.accordian-parent-box .accordion-item .accordion-button.collapsed {
+    background: hsla(0, 0%, 100%, 0);
+}
+
+.accordian-parent-box .accordion-item .accordion-button .device-box img {
+    width: auto;
+    height: 50px;
+}
+
+.accordian-parent-box .accordion-item .accordion-button .info-box {
+    padding: 0 80px;
+    border-right: 1px solid hsla(0, 0%, 100%, 0.2);
+    transition: all .3s;
+    transform: translate(0, 100%);
+    opacity: 0;
+}
+
+.accordian-parent-box .accordion-item .accordion-button.collapsed .info-box {
+    transform: translate(0, 0%);
+    opacity: 1;
+}
+
+.accordian-parent-box .accordion-item .accordion-button .info-box.basic-box {
+    transform: translate(0, 0%);
+    opacity: 1;
+}
+
+.accordian-parent-box .accordion-item .accordion-body {
+    color: #fff;
+    border: 1px solid hsla(82, 100%, 50%, .5);
+    border-top: 0;
+}
+
+.info-box span {
+    font-size: 12px;
+    opacity: .6;
+    font-weight: 300;
+    margin-bottom: 7px;
+    display: block;
+}
+
+.info-box p {
+    font-size: 16px;
+}
+
+.bordered-table {
+    border-radius: 6px;
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
+}
+
+.bordered-table .top-bar-boxed {
+    border-bottom: 2px solid hsla(0, 0%, 100%, 0.1);
+    padding: 15px;
+    font-size: 20px;
+}
+
+.bordered-table .table-content-box {
+    padding: 15px;
+    color: #fff;
+}
+
+.graph-info-item .box-parent {
+    font-size: 12px;
+    text-align: left;
+    padding-left: 20px;
+    position: relative;
+}
+
+.graph-info-item .box-parent+.box-parent {
+    margin-top: 30px;
+}
+
+.graph-info-item .box-parent>div {
+    font-size: 14px;
+    opacity: .6;
+}
+
+.graph-info-item .box-parent p {
+    font-size: 18px;
+}
+
+.table-information {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.table-info-item {
+    padding: 20px 15px;
+    position: relative;
+}
+
+.table-info-item::before {
+    height: 1px;
+    width: calc(100% - 30px);
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+    opacity: .2;
+    content: '';
+    background-color: #fff;
+}
+
+.table-info-item:last-child:before {
+    opacity: 0;
+}
+
+.table-info-item.full-width {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.table-info-item span {
+    font-size: 12px;
+    opacity: .6;
+    font-weight: 300;
+    margin-bottom: 7px;
+    display: block;
+}
+
+.table-info-item p {
+    font-size: 16px;
+}
+
+.graph-info {
+    overflow: hidden;
+}
+
+.graph-info .graph-info-item {
+    padding: 20px;
+    position: relative;
+}
+
+.graph-info .graph-info-item::before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    left: -1px;
+    background-color: #fff;
+    opacity: .2;
+    top: 0;
+    position: absolute;
+}
+
+.add-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    color: #A1FF00;
+    justify-content: center;
+    padding: 35px;
+    /*background-color: hsla(0, 0%, 100%, 0.1);*/
+    border-radius: 6px;
+    margin-top: 20px;
+    border: 1px solid hsla(82, 100%, 50%, 1);
+}
+
+.add-button svg {
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 1440px) {
+    .accordian-parent-box .accordion-item .accordion-button .info-box {
+        padding: 0 50px;
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .accordian-parent-box .accordion-item .accordion-button {
+        overflow-x: auto;
+    }
+
+    .accordian-parent-box .accordion-item .accordion-button .info-box {
+        padding: 0 30px;
+        white-space: nowrap;
+    }
+
+    .device-box {
+        flex: 1 1 120px;
+        max-width: 120px;
+        width: 100%;
+    }
+
+    .accordian-parent-box .accordion-item .accordion-button .device-box img {
+        height: 50px;
+        width: 100%;
+    }
+}

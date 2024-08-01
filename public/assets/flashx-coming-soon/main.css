@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "Baradig";
+  src: url('fonts/Baradig-Regular.otf');
+}
+@font-face {
+  font-family: "BaradigBold";
+  src: url('fonts/Baradig-Bold.otf');
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face {
+  font-family: "Poppins";
+  src: url('fonts/Poppins-Regular.ttf');
+}
+:root{
+  --1w: calc(1vw + .5vh);
+}
+html{scroll-behavior: smooth;}
+body{background-color: #252525; margin-top: 0; min-height: 100%; color: #fff;}
+html::-webkit-scrollbar {display: none;}
+html{ -ms-overflow-style: none; scrollbar-width: none;}
+img{height: auto;}
+.container{max-width: 90.384%; padding: 0; margin: 0 auto; width: 1750px;}
+p{color: #FFF; font-family: Poppins; font-size: calc(var(--1w) * .75); font-weight: 300; line-height: 1.8; margin-bottom: calc(var(--1w) * 1.25);}
+p:last-child{margin-bottom: 0px;}
+.website-bg{position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; object-fit: cover; object-position: center;}
+.arrow-btn{padding: calc(var(--1w) * .62); border-radius: 100px; border: 1px solid hsla(0, 0%, 100%, 0.3); position: absolute; right: 5%; bottom: 100px;}
+.arrow-btn svg{display: block; width: calc(var(--1w) * 2.8); height: auto;}
+section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: calc(var(--1w) * 6) 0 calc(var(--1w) * 5);
+  position: relative;
+}
+
+header{position: fixed; left: 50%; top: 30px; z-index: 99; padding: var(--1w); background: rgba(0, 0, 0, 0.2); transform: translate(-50%, 0px); width: 90.384%; border-radius: 100px; text-align: center; backdrop-filter: blur(7px) brightness(.6);}
+.logo a{display: block; margin: 0 auto; width: max-content;}
+.logo img{max-width: calc(var(--1w) * 8);}
+
+.title{font-family: 'BaradigBold'; color: #A1FF00; /*font-size: 70px;*/ font-size: calc(var(--1w) * 2.9); line-height: 1; text-transform: uppercase; /*margin-bottom: 60px;*/ margin-bottom: calc(var(--1w) * 2.5);}
+.sub-title{font-family: 'Baradig'; color: #FFF; /*font-size: 50px;*/ font-size: calc(var(--1w) * 2.1); font-style: italic; font-weight: 400; line-height: 1; text-transform: uppercase; /*margin-bottom: 30px;*/ margin-bottom: calc(var(--1w) * 1.25);}
+
+.image-box img{max-width: calc(var(--1w) * 22.5); opacity: .5;}
+
+.shaped-btn *{cursor: pointer;}
+.shaped-btn:hover{color:#0056b3;}
+.shaped-btn{position: relative; display: inline-block; color: #000; font-family: Poppins; font-size: 16px; font-weight: 600; text-transform: uppercase; white-space: nowrap; background: transparent; padding: 0; border: 0; outline: none !important;}
+.shaped-btn svg{display: block;}
+.shaped-btn:hover svg path, .submitted svg path{fill: transparent;}
+.shaped-btn span{position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 99;}
+.shaped-btn:hover span, .submitted span{color: rgba(161, 255, 0, 1);}
+.submitted{cursor: no-drop;}
+.submitted *{cursor: no-drop;}
+.submitted span{display: flex; align-items: center;}
+.submitted span svg{margin-right: 10px;}
+/* .shaped-btn:hover span{color: white;} */
+
+.timer-box{display: flex; align-items: center; justify-content: center; margin: 6vw 0;}
+.timer-box .input-box-design{padding: calc(var(--1w) * .62) calc(var(--1w) * 1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: calc(var(--1w) * .62); font-family: 'BaradigBold'; font-size: calc(var(--1w) * 1.65); line-height: 1;}
+.timer-box .input-box-design label{min-width: calc(var(--1w) * 3);}
+.timer-box .input-box-design sub{font-family: Poppins; font-size: 40%; color: rgba(255, 255, 255, 0.4); margin-left: 10px; bottom: 0;}
+.timer-box span{color: #FFF; font-family: Poppins; font-size: calc(var(--1w) * 1.8); font-weight: 600; line-height: 1; text-transform: uppercase; margin: 0 calc(var(--1w) * 1.25);}
+
+.email-template-parent{display: flex; align-items: flex-start; justify-content: center; flex-wrap: wrap;}
+.email-template-parent p{flex: 0 0 100%; text-align: center;}
+.email-template{position: relative; margin-right: 20px;}
+.email-template svg{display: block;}
+.email-template input{position: absolute; left: 0; top: 0; padding: 13px 20px; line-height: 1; background: transparent; border: 0; width: 100%; outline: none !important; color: #fff;}
+.email-template .error{text-align: left; display: block; color: red;}
+.email-template .email-success{text-align: left; display: block; color: white;}
+
+.footer-box{position: absolute; left: 0; bottom: 0; width: 100%; text-align: center; background-color: hsla(0, 0%, 0%, 0.2); backdrop-filter: blur(7px) brightness(.6); padding: 10px 0;}
+.footer-box .social-link{display: flex; align-items: center; justify-content: center;}
+.footer-box .social-link a{margin: 0 10px;}
+.footer-box .social-link a svg{width: 25px; height: 25px;}
+.footer-box p{font-size: 14px;}
+
+/* Responsive */
+@media only screen and (max-width: 1370px) {
+  header{top: 17px;}
+  .footer-box p {font-size: 12px; line-height: 1;}
+  .footer-box .social-link a svg{width: 20px; height: 20px;}
+}
+@media only screen and (max-width: 991px) {
+  :root{
+    --1w: calc(.5vw + 1vh);
+  }
+
+  p{font-size: calc(var(--1w) * 1.2);}
+
+  .shaped-btn{font-size: 18px;}
+  .shaped-btn svg:not(.shaped-btn span svg){width: calc(var(--1w) * 18); height: auto;}
+
+  .email-template-parent{display: block;}
+  .email-template-parent .email-template{margin: 0 auto; margin-bottom: 35px; width: max-content; max-width: calc(100vw - 50px);}
+  .email-template-parent .email-template svg{max-width: 100%; height: auto; width: calc(var(--1w) * 40);}
+  .email-template-parent .email-template input{transform: translate(0, -50%); top: 50%; padding: 0 15px; font-size: 16px;}
+  .email-template .error{position: absolute; top: 100%; font-size: 14px;}
+  .email-template .email-success{position: absolute; top: 100%; font-size: 14px;}
+
+  .image-box img{margin: calc(var(--1w) * 2) 0;}
+}
+@media only screen and (max-width: 600px) {
+  :root{
+    --1w: calc(.5vw + 1vh);
+  }
+
+  p{font-size: calc(var(--1w) * .9);}
+
+  .shaped-btn{font-size: 12px;}
+  .shaped-btn svg:not(.shaped-btn span svg){width: calc(var(--1w) * 18); height: auto;}
+
+  .email-template-parent{display: block;}
+  .email-template-parent .email-template svg{max-width: 100%; height: auto;}
+  .email-template-parent .email-template input{transform: translate(0, -50%); top: 50%; padding: 0 15px; font-size: 16px;}
+}

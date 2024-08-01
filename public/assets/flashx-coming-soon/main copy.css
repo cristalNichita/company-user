@@ -1,0 +1,130 @@
+body {
+    background-color: #252525;
+    margin-top: 0;
+}
+
+.header-section{
+    top: 0;
+    background-image: url("img/header-banner.png");
+    background-repeat: no-repeat, repeat;
+    height: 80vh;
+}
+
+.header-menu {
+    padding: 20px;
+}
+
+.navbar{
+    /* background:transparent !important; */
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 30px;
+ }
+
+  .schedule-a-demo {
+        border: 1px solid #a1ff00;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    .schedule-a-demo:hover {
+        background-color: #a1ff00;
+        color: black;
+        cursor: pointer;
+    }
+
+  .contact-us {
+    background-color: #a1ff00;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-right: 10px;
+  }
+
+  .contact-us:hover {
+        background-color: transparent;
+        border: 1px solid #a1ff00;
+        color: white;
+        cursor: pointer;
+    }
+
+  .text-common {
+    line-height: 40.5px;
+    font-weight: 400;
+    font-size: 30px;
+  }
+
+  .text-highlight {
+    color: #a1ff00;
+  }
+
+  .para-common {
+    font-size: 18px;
+  }
+
+  .section-02 {
+    background-color: black;
+  }
+
+/* carousel */
+  @media (max-width: 768px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+    .card {
+        min-height: 420px; /* 80vh; */
+        border-top-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* display 3 */
+@media (min-width: 768px) {
+    
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(33.333%);
+    }
+    
+    .carousel-inner .carousel-item-left.active, 
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-33.333%);
+    }
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left{ 
+  transform: translateX(0);
+}
+/* carousel */
+
+.cards-min {
+    height: 100%;
+}
+
+.card {
+    min-height: 420px; /* 80vh; */
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.carousel-indicators { 
+    top: 110%;
+}
+
+.carousel-indicators .active {
+    background-color: #a1ff00;
+}
+
+
+

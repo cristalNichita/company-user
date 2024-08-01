@@ -1,0 +1,414 @@
+body .create-custom-role-box-bottom-head {
+    padding: 20px;
+}
+
+.update-status span {
+    margin-right: 10px;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+.button-parent button+button {
+    margin-left: 15px;
+}
+
+.button-space-box {
+    padding-right: 15px;
+}
+
+.button-space-box h4 {
+    font-size: 22px !important;
+    margin-bottom: 10px !important;
+}
+
+.button-space-box p {
+    font-size: 14px;
+    opacity: .5;
+    font-weight: 400;
+}
+
+.input-parent {
+    padding: 15px 0;
+}
+
+.input-parent label {
+    font-size: 18px !important;
+    margin-bottom: 15px;
+    color: #fff !important;
+    line-height: 1 !important;
+}
+
+.input-parent .small-text {
+    font-size: 12px;
+    /* transform: translate(0, -10px); */
+}
+
+.input-parent input {
+    font-size: 12px;
+    width: 100%;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    border: 0;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+}
+
+.padding-box {
+    padding: 30px;
+}
+
+.padding-box .col-md-4 {
+    margin-bottom: 15px;
+}
+
+.border-box {
+    border-radius: 0px;
+    padding: 15px 0px;
+    border-bottom: 1px solid rgba(161, 255, 0, 0.25);
+}
+
+.border-box .small-label {
+    font-size: 12px;
+    opacity: .6;
+    margin-bottom: 8px;
+}
+
+.border-box p {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.setting-tabs .general-box {
+    background-color: transparent;
+}
+
+.setting-tabs .nav-tabs {
+    border: 1px solid hsla(82, 100%, 50%, 1);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.setting-tabs .nav-tabs .nav-link {
+    border: 0;
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    justify-content: space-between;
+}
+
+.setting-tabs .nav-tabs .nav-link+.nav-link {
+    border-top: 1px solid hsla(240, 100%, 99%, 0.1);
+}
+
+.setting-tabs .nav-tabs .nav-link.active,
+.setting-tabs .nav-tabs .nav-link:hover {
+    background: transparent;
+    color: #A1FF00;
+}
+
+.setting-tabs .nav-tabs .nav-link svg.hover {
+    display: none;
+}
+
+.setting-tabs .nav-tabs .nav-link:hover svg.hover,
+.setting-tabs .nav-tabs .nav-link.active svg.hover {
+    display: initial;
+}
+
+.setting-tabs .nav-tabs .nav-link:hover svg.normal,
+.setting-tabs .nav-tabs .nav-link.active svg.normal {
+    display: none;
+}
+
+.setting-tabs .nav-tabs .nav-link span svg {
+    margin-right: 20px;
+}
+
+.setting-tabs .tab-content .general-box {
+    border: 1px solid hsla(82, 100%, 50%, 1);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.preview-thumb {
+    position: relative;
+    width: fit-content;
+}
+
+.preview-thumb img {
+    width: auto;
+    height: 50px;
+}
+
+.preview-thumb .close-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.subscription-tab-content-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-bottom: 30px; */
+    border-bottom: 5px solid rgba(250, 250, 255, 0.1);
+    padding-right: 30px;
+}
+
+.can-btn {
+    font-size: 18px;
+    font-weight: 600;
+    color: #A1FF00;
+}
+
+.subscription-tab-content .nav-tabs .nav-link {
+    width: auto;
+}
+
+.subscription-tab-content .nav-tabs {
+    border: none;
+
+    border-radius: 0;
+    overflow: visible;
+    margin-bottom: 0;
+}
+
+.subscription-tab-content .nav-tabs .nav-link {
+    padding: 25px 30px;
+    position: relative;
+}
+
+.subscription-tab-content .nav-tabs .nav-link::after {
+    content: "";
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: -5px;
+    background-color: #A1FF00;
+    left: 0;
+    display: none;
+}
+
+.subscription-tab-content .nav-tabs .nav-link.active {
+    color: #FFF;
+}
+
+.subscription-tab-content .nav-tabs .nav-link.active::after {
+    display: block;
+}
+
+.card-boxes {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.card-single input {
+    display: none;
+}
+
+.access-keys-list .general-box .card-single input+label {
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    margin-right: 30px;
+    /* margin-bottom: 30px; */
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    max-width: 180px;
+    min-width: 180px;
+}
+
+.card-single input+label .card-heading {
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 1;
+    color: #FFF;
+    margin-bottom: 10px;
+    line-height: normal;
+}
+
+.card-single input+label .default-check {
+    position: absolute;
+    right: -12px;
+    top: -12px;
+    display: none;
+}
+
+.card-single input:checked+label .default-check {
+    display: block;
+}
+
+.card-single input+label .card-img-number {
+    display: flex;
+    align-items: center;
+}
+
+.card-single input+label .card-img-number .card-img {
+    min-width: 40px;
+    max-width: 40px;
+}
+
+.card-single input+label .card-img-number .card-number {
+    font-size: 12px;
+    font-weight: 400;
+    color: #FFF;
+}
+
+.card-single input+label .remove-card {
+    margin-top: 5px;
+    background-color: #545455;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: auto;
+    color: #FFF;
+}
+
+.add-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 180px;
+    min-width: 180px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.10);
+}
+
+.add-card button {
+    background: #545455;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.subscription-tab-content .tab-pane {
+    display: none;
+}
+
+.subscription-tab-content .active {
+    display: block;
+}
+
+#twoFactorMobileModal .modal-body,
+#twoFactorEmailModal .modal-body,
+#changePasswordModal .modal-body {
+    padding: 20px 30px 30px;
+    margin-top: 0;
+}
+
+.password-field {
+    position: relative;
+}
+
+.password-field #passwordIconId {
+    right: 15px;
+    color: #A1FF00;
+}
+
+.single-auth {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 30px 5px;
+}
+
+.blank-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 317px;
+    font-size: 22px;
+    color: #FCBD4C;
+    font-weight: 500;
+}
+.nav-pills .nav-link{
+    border: 1px solid #A1FF00;
+    color: #A1FF00;
+    margin-right: 15px;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: #A1FF00;
+    color: #000;
+}
+
+@media screen and (max-width: 1660px) {
+    .setting-tabs .nav-tabs .nav-link span svg {
+        margin-right: 15px;
+    }
+
+    .setting-tabs .nav-tabs .nav-link {
+        padding: 25px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .padding-box {
+        padding: 20px;
+    }
+
+    body .create-custom-role-box-bottom-head {
+        padding: 15px;
+    }
+
+    .input-parent label {
+        font-size: 16px !important;
+        margin-bottom: 10px;
+    }
+
+    .input-parent .small-text {
+        font-size: 10px;
+        line-height: 1.2;
+        transform: translate(0, -8px);
+    }
+
+    .setting-tabs .nav-tabs .nav-link {
+        padding: 18px;
+    }
+
+    .access-keys-list .general-box span {
+        font-size: 14px;
+    }
+
+    .setting-tabs .nav-tabs .nav-link span svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .card-single input+label {
+        margin-bottom: 20px;
+    }
+
+    .add-card {
+        min-height: 97px;
+    }
+}

@@ -1,0 +1,259 @@
+body .create-custom-role-box-bottom-head {
+    padding: 20px;
+}
+
+.update-status span {
+    margin-right: 10px;
+}
+
+.padding-box {
+    padding: 30px;
+}
+
+.border-box {
+    border-radius: 6px;
+    padding: 15px 20px;
+    border: 1px solid rgba(161, 255, 0, 0.25);
+}
+
+.border-box .small-label {
+    font-size: 12px;
+    opacity: .6;
+    margin-bottom: 8px;
+}
+
+.border-box p {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.border-box.active {
+    background-color: hsla(0, 0%, 100%, 0.2);
+    border: 1px solid #A1FF00;
+    position: relative;
+}
+
+.border-box.active::before {
+    width: 21px;
+    height: 21px;
+    content: '';
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21' viewBox='0 0 21 21' fill='none'%3E%3Cpath d='M10.5002 20.9168C9.05919 20.9168 7.70502 20.6432 6.43766 20.096C5.1703 19.5495 4.06787 18.8075 3.13037 17.87C2.19287 16.9325 1.45086 15.83 0.904329 14.5627C0.357107 13.2953 0.0834961 11.9411 0.0834961 10.5002C0.0834961 9.05919 0.357107 7.70502 0.904329 6.43766C1.45086 5.1703 2.19287 4.06787 3.13037 3.13037C4.06787 2.19287 5.1703 1.45051 6.43766 0.903288C7.70502 0.35676 9.05919 0.0834961 10.5002 0.0834961C11.9411 0.0834961 13.2953 0.35676 14.5627 0.903288C15.83 1.45051 16.9325 2.19287 17.87 3.13037C18.8075 4.06787 19.5495 5.1703 20.096 6.43766C20.6432 7.70502 20.9168 9.05919 20.9168 10.5002C20.9168 11.9411 20.6432 13.2953 20.096 14.5627C19.5495 15.83 18.8075 16.9325 17.87 17.87C16.9325 18.8075 15.83 19.5495 14.5627 20.096C13.2953 20.6432 11.9411 20.9168 10.5002 20.9168Z' fill='%23A1FF00'/%3E%3Cpath d='M6.77588 10.1092L9.0415 12.3748L14.1978 7.21859C14.3887 7.02762 14.6318 6.93213 14.9269 6.93213C15.2221 6.93213 15.4651 7.02762 15.6561 7.21859C15.8644 7.42692 15.9686 7.66998 15.9686 7.94775C15.9686 8.22553 15.8731 8.45991 15.6821 8.65088L9.77067 14.5623C9.5797 14.7533 9.33664 14.8488 9.0415 14.8488C8.74636 14.8488 8.50331 14.7533 8.31234 14.5623L5.34359 11.5936C5.15262 11.4026 5.05713 11.1596 5.05713 10.8644C5.05713 10.5693 5.15262 10.3262 5.34359 10.1353C5.55192 9.92692 5.79498 9.82276 6.07275 9.82276C6.35053 9.82276 6.58491 9.91824 6.77588 10.1092Z' fill='black'/%3E%3C/svg%3E");
+}
+
+.popup-section-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.dark-box {
+    background-color: hsla(0, 0%, 0%, 0.3);
+    border-radius: 6px;
+    position: relative;
+}
+
+.dark-box.disable-box::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: hsla(0, 0%, 43%, 0.2);
+    backdrop-filter: blur(3px) grayscale(1) brightness(1.2);
+    z-index: 9;
+}
+
+.dark-box.disable-box::after {
+    content: 'File is not accessible anymore, Still in backup.';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    text-align: center;
+}
+
+.dark-box .content-box {
+    padding: 53px 20px;
+}
+
+.dark-box .button-box {
+    padding: 10px;
+    border-top: 1px solid hsla(82, 100%, 50%, .25);
+}
+
+.status-column {
+    margin: 10px 0;
+}
+
+.status-column label {
+    font-size: 12px;
+    opacity: .6;
+}
+
+.status-column p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.status-column .big-text {
+    font-size: 22px;
+}
+
+.status-column img {
+    object-fit: cover;
+}
+
+.input-parent {
+    padding: 15px 0;
+}
+
+.input-parent label {
+    font-size: 18px !important;
+    margin-bottom: 15px;
+    color: #fff !important;
+    line-height: 1 !important;
+}
+
+.input-parent label.error {
+    font-size: 14px !important;
+    margin-bottom: 0px;
+    color: #EA4335 !important;
+}
+
+.input-parent .small-text {
+    font-size: 12px;
+    transform: translate(0, -10px);
+}
+
+.input-parent input,
+.input-parent select,
+.input-parent select:focus,
+.input-parent textarea {
+    font-size: 12px;
+    width: 100%;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    border: 0;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+    line-height: 1.5;
+}
+
+.input-parent select{
+    background-image: url(../images/down-arrow-green.svg);
+    background-position: 98% 50%;
+    background-repeat: no-repeat;
+}
+
+.input-parent select option{
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.input-parent select option:checked,
+.input-parent select option:hover,
+.input-parent select option:focus{
+    background-color: #000;
+}
+
+.second-option {
+    padding: 50px 0;
+}
+
+.or-parent-box {
+    display: flex;
+    align-items: center;
+}
+
+.or-parent-box .or-box {
+    font-size: 18px;
+    padding: 0 15px;
+}
+
+.or-parent-box .main-box {
+    flex: 0 0 calc(50% - 28px);
+}
+
+.or-parent-box .main-box.drop-box {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px dashed hsla(0, 0%, 100%, 0.5);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.app-intigrate-item {
+    padding: 15px;
+    border-radius: 5px;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    position: relative;
+}
+
+.app-intigrate-item .app-image {
+    margin-bottom: 5px;
+}
+
+.app-intigrate-item .app-image img {
+    width: 100%;
+    height: 20px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.app-intigrate-item .small-text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.app-intigrate-item .status-box {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    line-height: 1;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.app-intigrate-item.active {
+    background-color: hsla(0, 0%, 100%, 0.05);
+    border: 1px solid #A1FF00;
+}
+
+.drop-box .dropzone.drop-zone-section {
+    padding: 0;
+    border: 0;
+    height: auto;
+    width: 100%;
+    min-height: auto;
+    background: transparent;
+}
+
+.drop-box .dropzone.drop-zone-section .dz-message {
+    margin: 0;
+    background: transparent;
+}
+
+.drop-box .dropzone.drop-zone-section .dz-message .dz-button {
+    color: hsla(0, 0%, 100%, 0.3);
+}
+
+.drop-box .dropzone.drop-zone-section .dz-message .dz-button::before {
+    content: '';
+    display: inline-block;
+    margin-right: 10px;
+    width: 17px;
+    height: 12px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='12' viewBox='0 0 17 12' fill='none'%3E%3Cpath d='M13.8 5C13.9 4.7 14 4.4 14 4C14 1.8 12.2 0 10 0C8.5 0 7.1 0.9 6.5 2.2C6.2 2.1 5.8 2 5.5 2C4.1 2 3 3.1 3 4.5C3 4.7 3 4.9 3.1 5C1.3 5.3 0 6.7 0 8.5C0 10.4 1.6 12 3.5 12H7V9H4L8.5 4.5L13 9H10V12H13.5C15.4 12 17 10.4 17 8.5C17 6.7 15.6 5.2 13.8 5Z' fill='%23A1FF00'/%3E%3C/svg%3E");
+}
