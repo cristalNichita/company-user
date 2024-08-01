@@ -1395,10 +1395,9 @@
                                 <img alt="" class="size-9 rounded-full border-2 border-success" src="{{ asset('assets/img/user.jpg') }}">
                                 <div class="flex flex-col gap-1.5">
                                 <span class="text-sm text-gray-800 font-semibold leading-none">{{ $user->fullname }}</span>
-                                    <a class="text-xs text-gray-600 hover:text-primary font-medium leading-none"
-                                       href="html/demo1/account/home/get-started.html">
+                                    <div class="text-xs text-gray-600 font-medium leading-none">
                                         {{ $user->email }}
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

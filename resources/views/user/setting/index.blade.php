@@ -188,7 +188,11 @@
                                             <b>Vault Timeout</b>
                                             <div class="text-gray-500">Time after which your vault will take the vault timeout action.</div>
                                             <select name="" class="input max-w-72 cursor-pointer mt-4">
+                                                <option value="">5 minutes</option>
+                                                <option value="">10 minutes</option>
                                                 <option value="">15 minutes</option>
+                                                <option value="">30 minutes</option>
+                                                <option value="">45 minutes</option>
                                             </select>
                                         </div>
 

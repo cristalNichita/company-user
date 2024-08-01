@@ -642,7 +642,7 @@ video {
     --tw-dropdown-background-color: white;
     --tw-backdrop-background-color: rgba(0, 0, 0, 0.80);
     --tw-table-head-background-color: var(--tw-light-active);
-    --tw-card-border: 1px solid var(--tw-gray-200);
+    --tw-card-border: 1px solid var(--tw-gray-300);
     --tw-table-border: 1px solid var(--tw-gray-200);
     --tw-dropdown-border: 1px solid var(--tw-gray-200);
     --tw-popover-border: 1px solid var(--tw-gray-200);
@@ -993,6 +993,24 @@ video {
     color: var(--tw-gray-700);
     font-weight: 500;
     font-size: 0.8125rem;
+    line-height: 1.125rem;
+}
+
+.form-label-big {
+    display: flex;
+    width: 100%;
+    color: var(--tw-gray-700);
+    font-weight: 700;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+}
+
+.form-label-med {
+    display: flex;
+    width: 100%;
+    color: var(--tw-gray-700);
+    font-weight: 500;
+    font-size: 0.7rem;
     line-height: 1.125rem;
 }
 
@@ -1405,6 +1423,12 @@ video {
     font-weight: 500;
     font-size: 0.875rem;
     height: 3rem;
+}
+
+.input-lg-big {
+    font-weight: 500;
+    font-size: 0.875rem;
+    height: 5rem;
 }
 
 .\!input:not(input) {
@@ -2792,7 +2816,7 @@ video {
 
 .btn-danger {
     color: #fff;
-    background-color: var(--tw-danger);
+    background-color: var(--tw-danger-active);
 }
 
 .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active {

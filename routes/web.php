@@ -212,4 +212,9 @@ Route::middleware(['auth', 'checkUser'])->group(function () {
         $user = Auth::user();
         return view('user.password-generator.index', compact('user'));
     })->name('passwordGenerator');
+
+    Route::get('setting-view', function() {
+        $user = Auth::user();
+        return view('user.setting-view.index', compact('user'));
+    })->name('settingView');
 });
