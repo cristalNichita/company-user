@@ -383,7 +383,7 @@
                                                 <img src="{{ asset('assets/img/mfa-reprompt.png') }}" alt="">
                                                 <div class="ml-2">
                                                     <div class="font-semibold text-gray-900 text-md">MFA Re-prompt</div>
-                                                    <div class="text-gray-600 text-sm">Require MFA re-prompt to view the password.</div>
+                                                    <div class="text-gray-600 text-sm">Require MFA re-prompt to view the specific password.</div>
                                                 </div>
                                             </div>
                                             <input type="checkbox" name="mfa_required">
