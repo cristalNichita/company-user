@@ -440,7 +440,7 @@
                                 <div class="w-full">
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label flex items-center gap-1 max-w-56">Password <span class="text-danger">*</span></label>
-                                        <div class="input w-full" data-toggle-password="true">
+                                        <div class="input w-full text-gray-700" data-toggle-password="true">
                                             <input name="password" placeholder="Password" type="password"/>
                                             <div class="btn btn-icon" data-toggle-password-trigger="true">
                                                 <i class="ki-outline ki-eye toggle-password-active:hidden">

@@ -7,14 +7,20 @@
             <hr>
             <div class="modal-body grid gap-5 px-0 py-5">
                 <div class="flex flex-col px-5 gap-2.5">
-                    <div class="flex flex-center gap-1">
-                        <label class="text-gray-600 font-semibold text-2sm">
+                    <div class="flex flex-center">
+                        <label class="text-gray-600  text-2sm">
                             This action is protected. To continue, please re-enter your master password to verify your identity.
                         </label>
                     </div>
-                    <label class="input">
-                        <input id="password-confirm-modal-input" type="password" placeholder="************"/>
-                    </label>
+                        <div class="input max-w-full font-normal" data-toggle-password="true">
+                            <input id="password-confirm-modal-input" placeholder="Enter your master-password" type="password"/>
+                            <div class="btn btn-icon" data-toggle-password-trigger="true">
+                                <i class="ki-outline ki-eye toggle-password-active:hidden">
+                                </i>
+                                <i class="ki-outline ki-eye-slash hidden toggle-password-active:block">
+                                </i>
+                            </div>
+                        </div>
                 </div>
                 <div class="flex px-5 gap-4 justify-end">
                     <button class="btn btn-light text-center close-modal">Cancel</button>
@@ -31,7 +37,7 @@
             <hr>
             <div class="modal-body grid gap-5 px-0 py-5">
                 <div class="flex flex-col px-5 gap-2.5">
-                    <label class="text-gray-600 font-semibold text-2sm">
+                    <label class="text-gray-600 text-2sm">
                         To proceed, this action requires MFA verification. Please choose how you want to authenticate your identity.
                     </label>
                 </div>
@@ -40,7 +46,7 @@
                             <input type="radio" style="display: none" name="mfa_select" value="passkey">
                             <div class="flex flex-col gap-4">
                                 <div class="flex items-center justify-between gap-2">
-                                    <i class="ki-filled ki-subtitle text-2xl link">
+                                    <i class="ki-filled ki-fingerprint-scanning text-2xl link">
                                     </i>
                                 </div>
                                 <div class="flex flex-col gap-3">
@@ -57,7 +63,7 @@
                             <input type="radio" style="display: none" name="mfa_select" value="sms_otp">
                             <div class="flex flex-col gap-4">
                                 <div class="flex items-center justify-between gap-2">
-                                    <i class="ki-filled ki-subtitle text-2xl link">
+                                    <i class="ki-filled ki-phone text-2xl link">
                                     </i>
                                 </div>
                                 <div class="flex flex-col gap-3">
@@ -74,12 +80,12 @@
                         <input type="radio" style="display: none" name="mfa_select" value="mfa_app">
                         <div class="flex flex-col gap-4">
                             <div class="flex items-center justify-between gap-2">
-                                <i class="ki-filled ki-subtitle text-2xl link">
+                                <i class="ki-filled ki-security-user text-2xl link">
                                 </i>
                             </div>
                             <div class="flex flex-col gap-3">
                                 <span class="text-base font-semibold leading-none text-gray-900 hover:text-primary-active">
-                                    Authentication App
+                                    Auth App
                                 </span>
                                 <span class="text-2sm font-medium text-gray-600 leading-5">
                                     Generate a code using your authentication app (e.g. Google Authenticator).
