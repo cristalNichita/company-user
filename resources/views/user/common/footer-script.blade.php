@@ -147,6 +147,17 @@
 <script>
     var APP_URL = "{{ env('APP_URL') }}";
 
+    function copy(auth, text) {
+        const $temp = $('<textarea>');
+        $('body').append($temp);
+
+        $temp.val(text).select();
+
+        document.execCommand('copy');
+
+        $temp.remove();
+    }
+
     function showStep(step) {
         $('.modal-step').hide();
         $('.' + step).show();
