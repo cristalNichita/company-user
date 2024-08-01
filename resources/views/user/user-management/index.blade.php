@@ -4,24 +4,22 @@
 @section('content')
     <div class="wrapper flex grow flex-col">
         <main class="grow content pt-5" id="content" role="content">
-            <div class="container-fixed" id="content_container">
-            </div>
-
+            <!-- begin: container -->
             <div class="container-fixed">
-                <div class="flex flex-nowrap items-center lg:items-end justify-between dark:border-b-coal-100 gap-6 mb-5 lg:mb-10">
+                <div class="flex flex-nowrap items-center lg:items-end justify-between dark:border-b-coal-100 gap-6 mb-1.5 lg:mb-3">
                     <div class="grid">
                         <div class="scrollable-x-auto">
                             <div class="menu gap-3" data-menu="true">
                                 <div class="menu-item border-b-2 border-b-transparent menu-item-active:border-b-primary menu-item-here:border-b-primary" data-menu-item-placement="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click">
                                     <div class="menu-link gap-1.5 pb-2 lg:pb-4 px-2" tabindex="0">
-                                        <div class="text-[1.875rem] text-gray-900 font-semibold">
-                                            <div>User Management</div>
-                                            <div class="text-gray-600 text-1.5xl">
+                                        <div class="text-2xl text-gray-900">
+                                            <div class="font-medium">User Management</div>
+                                            <div class="text-gray-600 text-lg">
                                                 <div class="flex items-center flex-wrap gap-1.5 font-medium">
                                                     <span class="text-md text-gray-600">All Users:</span>
-                                                    <span class="text-md text-gray-900 font-semibold me-2">49,053</span>
+                                                    <span class="text-md text-gray-900 font-semibold me-2">39</span>
                                                     <span class="text-md text-gray-600">Passwords:</span>
-                                                    <span class="text-md text-gray-900 font-semibold">502</span>
+                                                    <span class="text-md text-gray-900 font-semibold">123</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -37,13 +35,12 @@
                     </div>
                 </div>
             </div>
-
             <div class="container-fixed">
                 <div class="grid gap-5 lg:gap-7.5">
                     <div class="card card-grid min-w-full">
                         <div class="card-header flex-wrap gap-2">
                             <h3 class="card-title font-medium text-sm">
-                                Showing 10 of 49,053 users
+                                Showing 10 of 39 users
                             </h3>
                             <div class="flex flex-wrap gap-2 lg:gap-5">
                                 <div class="flex">
@@ -114,7 +111,7 @@
                                                     <img alt="" class="rounded-full size-7 shrink-0" src="{{ asset('assets/img/user.jpg') }}"/>
                                                     <div>
                                                         <a class="text-sm font-semibold text-gray-900 hover:text-primary-active" href="#">Tyler Hero</a>
-                                                        <div>tyler.hero@gmail.com</div>
+                                                        <div class="text-gray-600">tyler.hero@gmail.com</div>
                                                     </div>
                                                 </div>
                                             </td>
@@ -122,9 +119,11 @@
                                                 User
                                             </td>
                                             <td class="text-center">
-                                                <div class="rounded-[30px] badge badge-outline badge-success w-full font-semibold">
-                                                    Active
-                                                </div>
+                                               <span class="badge badge-success font-normal badge-outline rounded-[30px]">
+                                                <span class="size-1.5 rounded-full bg-success me-1.5">
+                                                </span>
+                                                Active
+                                               </span>
                                             </td>
                                             <td>
                                                 <div class="flex flex-wrap gap-2 text-1.5xl">
@@ -152,67 +151,40 @@
                                                             <i class="ki-filled ki-dots-vertical">
                                                             </i>
                                                         </button>
-                                                        <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true">
+                                                        <div class="menu-dropdown menu-default w-full max-w-[200px]" data-menu-dismiss="true">
                                                             <div class="menu-item">
                                                                 <a class="menu-link" href="#">
-                    <span class="menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
+                                                                    <span class="menu-icon">
+                                                                     <i class="ki-outline ki-pencil">
+                                                                     </i>
+                                                                    </span>
                                                                     <span class="menu-title">
-                     View
-                    </span>
+                                                                     Edit User
+                                                                    </span>
                                                                 </a>
                                                             </div>
                                                             <div class="menu-item">
                                                                 <a class="menu-link" href="#">
-                    <span class="menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
+                                                                    <span class="menu-icon">
+                                                                     <i class="ki-outline ki-arrow-right-left">
+                                                                     </i>
+                                                                    </span>
                                                                     <span class="menu-title">
-                     Export
-                    </span>
+                                                                     Transfer Account
+                                                                    </span>
                                                                 </a>
-                                                            </div>
-                                                            <div class="menu-separator">
-                                                            </div>
-                                                            <div class="menu-item">
-                                                                <a class="menu-link" href="#">
-                    <span class="menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                                                                    <span class="menu-title">
-                     Edit
-                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="menu-item">
-                                                                <a class="menu-link" href="#">
-                    <span class="menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                                                                    <span class="menu-title">
-                     Make a copy
-                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="menu-separator">
-                                                            </div>
-                                                            <div class="menu-item">
-                                                                <a class="menu-link" href="#">
-                    <span class="menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                                                                    <span class="menu-title">
-                     Remove
-                    </span>
-                                                                </a>
-                                                            </div>
                                                         </div>
+                                                            <div class="menu-item">
+                                                                <a class="menu-link" href="#">
+                                                                    <span class="menu-icon">
+                                                                     <i class="ki-outline ki-trash" style="color: #F8285A">
+                                                                     </i>
+                                                                    </span>
+                                                                    <span class="menu-title">
+                                                                    Delete User
+                                                                    </span>
+                                                                </a>
+                                                            </div>
                                                     </div>
                                                 </div>
                                             </td>
