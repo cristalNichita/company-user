@@ -71,7 +71,7 @@
                             </div>
                             <form action="{{ route('updateFullname') }}" method="POST">
                                 @csrf
-                                <div class="card-body grid gap-5">
+                                <div class="card-body-third grid gap-5">
                                     <div class="w-full">
                                         <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                             <label class="form-label flex items-center gap-1 max-w-56">
@@ -96,7 +96,7 @@
                             </div>
                             <form action="{{ route('updateEmailAddress') }}" method="POST">
                                 @csrf
-                                <div class="card-body grid gap-5 pt-7.5">
+                                <div class="card-body-third grid gap-5 pt-7.5">
                                     <div class="w-full">
                                         <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                             <label class="form-label flex items-center gap-1 max-w-56">
@@ -122,13 +122,14 @@
                                 </h3>
                             </div>
                             <form action="{{ route('changePassword') }}" method="POST">
-                                <div class="card-body grid gap-5">
+                                <div class="card-body grid gap-3.5">
                                     @csrf
-                                    <div class="badge border-dashed badge-outline badge-warning justify-start border-2 max-w-[60%]">
-                                        <img src="{{ asset('assets/img/security.png') }}" alt="">
+                                    <div class="badge border-dashed badge-outline badge-warning justify-start border-2 max-w-[700px] py-3.5 ">
+                                        <i class="ki-duotone ki-information-3 text-3xl">
+                                        </i>
                                         <div class="ml-5">
                                             <div class="modal-title text-gray-800 ">Warning</div>
-                                            <span class="text-gray-700">Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour.</span>
+                                            <span class="font-normal text-gray-600">Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour.</span>
                                         </div>
                                     </div>
                                     <div class="w-full">
@@ -136,7 +137,15 @@
                                             <label class="form-label max-w-56">
                                                 Current Master Password
                                             </label>
-                                            <input class="input max-w-64" placeholder="********" type="password" name="password" value="">
+                                            <div class="input max-w-72 font-normal" data-toggle-password="true">
+                                                <input placeholder="**********" type="password" name="password"/>
+                                                <div class="btn btn-icon" data-toggle-password-trigger="true">
+                                                    <i class="ki-outline ki-eye toggle-password-active:hidden">
+                                                    </i>
+                                                    <i class="ki-outline ki-eye-slash hidden toggle-password-active:block">
+                                                    </i>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="w-full">
@@ -144,7 +153,15 @@
                                             <label class="form-label max-w-56">
                                                 New Master Password
                                             </label>
-                                            <input class="input max-w-64" placeholder="********" type="password" name="new_password" value="">
+                                            <div class="input max-w-72 font-normal" data-toggle-password="true">
+                                                <input placeholder="**********" type="password" name="new_password"/>
+                                                <div class="btn btn-icon" data-toggle-password-trigger="true">
+                                                    <i class="ki-outline ki-eye toggle-password-active:hidden">
+                                                    </i>
+                                                    <i class="ki-outline ki-eye-slash hidden toggle-password-active:block">
+                                                    </i>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="w-full">
@@ -152,7 +169,15 @@
                                             <label class="form-label max-w-56">
                                                 Confirm New Master Password
                                             </label>
-                                            <input class="input max-w-64" placeholder="********" type="password" name="confirm_password" value="">
+                                            <div class="input max-w-72" data-toggle-password="true">
+                                                <input placeholder="**********" type="password" name="confirm_password"/>
+                                                <div class="btn btn-icon" data-toggle-password-trigger="true">
+                                                    <i class="ki-outline ki-eye toggle-password-active:hidden">
+                                                    </i>
+                                                    <i class="ki-outline ki-eye-slash hidden toggle-password-active:block">
+                                                    </i>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="w-full">
@@ -160,7 +185,9 @@
                                             <label class="form-label max-w-56">
                                                 Master Password Hint
                                             </label>
-                                            <input class="input max-w-64" placeholder="Enter your password hint." type="text" name="password_hint" value="{{ $user->password_hint }}">
+                                            <div class="min-w-72">
+                                                <input class="input" placeholder="TestHint123" type="text" name="password_hint" value="{{ $user->password_hint }}"/>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="flex justify-start pt-2.5">
@@ -169,7 +196,7 @@
                                         </button>
                                     </div>
                                     <hr>
-                                    <div class="text-gray-500 text-md">
+                                    <div class="text-gray-500 text-sm">
                                         <b>Important:</b> Master passwords should be 12 character minimum.
                                     </div>
                                 </div>
@@ -199,13 +226,13 @@
                                         <div class="text-sm text-gray-600 mt-7">
                                             <b>Vault Timeout Action</b>
                                             <div class="text-gray-500">Action when wil be executed when your vault will take the vault timeout action.</div>
-                                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-7.5 mt-7 max-w-[60%]">
+                                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-3.5 lg:gap-7.5 mt-2.5 max-w-[600px]">
                                                 <label class="max-h-36 flex cursor-pointer items-center bg-center border border-gray-300 rounded-xl border-dashed has-[:checked]:border-primary has-[:checked]:bg-op-primary has-[:checked]:text-primary">
                                                     <div class="flex rounded-xl py-5 px-5">
                                                         <input class="radio" name="sso_option" type="radio" value="1">
                                                         <div class="ml-2.5">
-                                                            <div class="text-md font-semibold text-gray-800 radio-title">Lock</div>
-                                                            <div class="text-md font-semibold text-gray-800 text-gray-600">Master password is required to access your vault again.</div>
+                                                            <div class="text-md text-gray-800 radio-title">Lock</div>
+                                                            <div class="text-sm text-gray-500 text-gray-600">Master password is required to access your vault again.</div>
                                                         </div>
                                                     </div>
                                                 </label>
@@ -213,8 +240,8 @@
                                                     <div class="flex rounded-xl py-5 px-5">
                                                         <input class="radio" name="sso_option" type="radio" value="1">
                                                         <div class="ml-2.5">
-                                                            <div class="text-md font-semibold text-gray-800 radio-title">Log out</div>
-                                                            <span class="text-md font-semibold text-gray-800 text-gray-600">Re-authentication is required to access your vault again.</span>
+                                                            <div class="text-md text-gray-800 radio-title">Log out</div>
+                                                            <span class="text-sm text-gray-500 text-gray-600">Re-authentication is required to access your vault again.</span>
                                                         </div>
                                                     </div>
                                                 </label>

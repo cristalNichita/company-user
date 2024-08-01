@@ -5,21 +5,16 @@
     <div class="wrapper flex grow flex-col">
         <main class="grow content pt-5" id="content" role="content">
             <!-- begin: container -->
-            <div class="container-fixed" id="content_container">
-            </div>
             <div class="container-fixed">
-                <div class="flex flex-nowrap items-center lg:items-end justify-between dark:border-b-coal-100 gap-6 mb-5 lg:mb-10">
+                <div class="flex flex-nowrap items-center lg:items-end justify-between dark:border-b-coal-100 gap-6 mb-1.5 lg:mb-3">
                     <div class="grid">
                         <div class="scrollable-x-auto">
                             <div class="menu gap-3" data-menu="true">
-                                <div
-                                    class="menu-item border-b-2 border-b-transparent menu-item-active:border-b-primary menu-item-here:border-b-primary"
-                                    data-menu-item-placement="bottom-start" data-menu-item-toggle="dropdown"
-                                    data-menu-item-trigger="click">
+                                <div class="menu-item border-b-2 border-b-transparent menu-item-active:border-b-primary menu-item-here:border-b-primary" data-menu-item-placement="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click">
                                     <div class="menu-link gap-1.5 pb-2 lg:pb-4 px-2" tabindex="0">
-                                        <div class="text-[1.875rem] text-gray-900 font-semibold">
-                                            <div>MFA Settings</div>
-                                            <div class="text-gray-600 text-1.5xl">Enhance Workflows with Advanced MFA.</div>
+                                        <div class="text-2xl text-gray-900">
+                                            <div class="font-medium">MFA Settings</div>
+                                            <div class="text-gray-600 text-lg">Enhance Workflows with Advanced MFA.</div>
                                         </div>
                                     </div>
                                 </div>
