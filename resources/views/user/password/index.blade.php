@@ -15,16 +15,16 @@
                             <div class="menu gap-3" data-menu="true">
                                 <div class="menu-item border-b-2 border-b-transparent menu-item-active:border-b-primary menu-item-here:border-b-primary" data-menu-item-placement="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click">
                                     <div class="menu-link gap-1.5 pb-2 lg:pb-4 px-2" tabindex="0">
-                                        <div class="text-[1.875rem] text-gray-900 font-semibold">
-                                            <div>Passwords Management</div>
-                                            <div class="text-gray-600 text-1.5xl">Central Hub for Passwords Management</div>
+                                        <div class="text-2xl text-gray-900">
+                                            <div class="font-medium">Passwords Management</div>
+                                            <div class="text-gray-600 text-lg">Central Hub for Passwords Management</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex items-center lg:pb-4 gap-2.5">
+                    <div class="flex items-center center lg:pb-7 gap-2.5">
                         <button class="btn btn-sm btn-light" id="share_button">
                             Share
                         </button>
@@ -42,7 +42,11 @@
                     <!-- begin: toolbar -->
                     <div class="flex flex-wrap items-center gap-5 justify-between">
                         <div class="flex gap-7">
-                            <input type="text" placeholder="Search Passwords" class="btn-tabs p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <div class="input font-normal">
+                                <i class="ki-outline ki-magnifier">
+                                </i>
+                                <input placeholder="Search Passwords" type="text" value="" autocomplete="new-password"/>
+                            </div>
                             <label class="switch">
                                 <span class="switch-label">
                                     Shared
@@ -172,7 +176,7 @@
                                             <div class="progress-bar">
                                             </div>
                                         </div>
-                                        <div class="text-right text-warning font-semibold progress-text">Medium</div>
+                                        <div class="text-right text-warning progress-text text-sm">Medium</div>
                                     </div>
                                 </div>
                             @endforeach
@@ -191,7 +195,7 @@
                                             </div>
                                             <div class="flex flex-col">
                                                 <button
-                                                    class="text-lg font-semibold text-gray-900 hover:text-primary-active mb-px open-edit-modal"
+                                                    class="text-lg text-left font-semibold text-gray-900 hover:text-primary-active mb-px open-edit-modal"
                                                     data-id="{{ $password->id }}"
                                                     data-password="{{ $password->master_password_required }}"
                                                     data-mfa="{{ $password->mfa_required }}"
@@ -203,7 +207,7 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <div class="flex items-center flex-wrap gap-5 lg:gap-20">
+                                        <div class="flex items-center flex-wrap gap-5 lg:gap-14">
                                             <div class="flex items-center flex-wrap gap-5 lg:gap-14">
                                                 <span class="badge badge-primary badge-outline">
                                                     Private
@@ -213,23 +217,23 @@
                                                         <div class="progress-bar">
                                                         </div>
                                                     </div>
-                                                    <div class="text-right font-semibold progress-text">Medium</div>
+                                                    <div class="text-right progress-text text-sm">Medium</div>
                                                 </div>
                                                 <div>
-                                                    <div class="text-gray-600">Created:</div>
-                                                    <div>{{ date('M d', strtotime($password->created_at)) }}</div>
+                                                    <div class="text-gray-600 font-medium text-sm">Created:</div>
+                                                    <div class="text-sm font-semibold text-gray-700">{{ date('M d', strtotime($password->created_at)) }}</div>
                                                 </div>
                                                 <div>
                                                     <a target="_blank" href="{{ $password->url }}">
-                                                        <i class="ki-outline ki-exit-right-corner text-1.5xl text-gray-600"></i>
+                                                        <i class="ki-outline ki-exit-right-corner text-2xl text-gray-700"></i>
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="flex items-center gap-5 lg:gap-14">
+                                            <div class="flex items-center gap-2 lg:gap-20">
                                                 <div class="menu" data-menu="true">
                                                     <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
                                                         <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
-                                                            <i class="ki-filled ki-dots-vertical">
+                                                            <i class="ki-filled ki-dots-vertical text-xl">
                                                             </i>
                                                         </button>
                                                         <div class="menu-dropdown menu-default w-full max-w-[200px]" data-menu-dismiss="true">
@@ -299,17 +303,17 @@
 
 {{--Create Modal--}}
     <div class="modal fade drawer-backdrop" tabindex="-1" role="dialog" aria-labelledby="createPasswordModalLabel" aria-hidden="true" id="create_password_modal">
-        <div class="modal-content max-w-[700px] top-5 lg:top-[15%]">
+        <div class="modal-content max-w-[700px] top-5">
             <div class="modal-header p-3">
-                <h3 class="modal-title text-1.5xl p-2" id="createPasswordModalLabel">Create New Password</h3>
-                <label class="text-gray-600 font-semibold text-2sm p-2">
+                <h3 class="modal-title text-1.5xl px-5 pt-3" id="createPasswordModalLabel">Create New Password</h3>
+                <label class="text-gray-600 font-normal text-sm px-5">
                     Fill in all required fields to create a new password.
                 </label>
             </div>
             <form action="{{ route('passwords.store') }}" method="POST">
                 @csrf
                 <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-                <div class="modal-body grid gap-5 px-0 py-5">
+                <div class="modal-body grid gap-5 px-3 py-5">
                     <div class="card mx-5 pb-2.5">
                         <div class="flex flex-col gap-2.5">
                             <div class="card-header">
@@ -331,7 +335,15 @@
                                 <div class="w-full">
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label flex items-center gap-1 max-w-56">Password <span class="text-danger">*</span></label>
-                                        <input type="password" class="input" name="password" placeholder="************">
+                                        <div class="input w-full" data-toggle-password="true">
+                                            <input name="password" placeholder="Password" type="password"/>
+                                            <div class="btn btn-icon" data-toggle-password-trigger="true">
+                                                <i class="ki-outline ki-eye toggle-password-active:hidden">
+                                                </i>
+                                                <i class="ki-outline ki-eye-slash hidden toggle-password-active:block">
+                                                </i>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="w-full">
@@ -356,8 +368,8 @@
                                             <div class="flex">
                                                 <img src="{{ asset('assets/img/password-reprompt.png') }}" alt="">
                                                 <div class="ml-2">
-                                                    <div class="font-semibold text-gray-900">Master Password Re-prompt</div>
-                                                    <div class="font-semibold text-gray-600">Require master password re-prompt to view the password.</div>
+                                                    <div class="font-semibold text-gray-900 text-md">Master Password Re-prompt</div>
+                                                    <div class="text-gray-600 text-sm">Require master password re-prompt to view the password.</div>
                                                 </div>
                                             </div>
                                             <input type="checkbox" name="master_password_required">
@@ -370,8 +382,8 @@
                                             <div class="flex">
                                                 <img src="{{ asset('assets/img/mfa-reprompt.png') }}" alt="">
                                                 <div class="ml-2">
-                                                    <div class="font-semibold text-gray-900">MFA Re-prompt</div>
-                                                    <div class="font-semibold text-gray-600">Require MFA re-prompt to view the password.</div>
+                                                    <div class="font-semibold text-gray-900 text-md">MFA Re-prompt</div>
+                                                    <div class="text-gray-600 text-sm">Require MFA re-prompt to view the password.</div>
                                                 </div>
                                             </div>
                                             <input type="checkbox" name="mfa_required">
@@ -395,10 +407,10 @@
 
 {{--Edit Modal--}}
     <div class="modal fade drawer-backdrop" tabindex="-1" role="dialog" aria-labelledby="editPasswordModalLabel" aria-hidden="true" id="edit_password_modal">
-        <div class="modal-content max-w-[700px] top-5 lg:top-[15%]">
+        <div class="modal-content max-w-[700px] top-5">
             <div class="modal-header p-3">
-                <h3 class="modal-title text-1.5xl p-2" id="editPasswordModalLabel">Edit Password</h3>
-                <label class="text-gray-600 font-semibold text-2sm p-2">
+                <h3 class="modal-title text-1.5xl px-5 pt-3" id="createPasswordModalLabel">Edit Password</h3>
+                <label class="text-gray-600 font-normal text-sm px-5">
                     Fill in all required fields to edit a password.
                 </label>
             </div>
@@ -406,7 +418,7 @@
                 @csrf
                 @method('PUT')
                 <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-                <div class="modal-body grid gap-5 px-0 py-5">
+                <div class="modal-body grid gap-5 px-3 py-5">
                     <div class="card mx-5 pb-2.5">
                         <div class="flex flex-col gap-2.5">
                             <div class="card-header">
@@ -428,7 +440,15 @@
                                 <div class="w-full">
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label flex items-center gap-1 max-w-56">Password <span class="text-danger">*</span></label>
-                                        <input type="password" class="input" name="password" placeholder="************">
+                                        <div class="input w-full" data-toggle-password="true">
+                                            <input name="password" placeholder="Password" type="password"/>
+                                            <div class="btn btn-icon" data-toggle-password-trigger="true">
+                                                <i class="ki-outline ki-eye toggle-password-active:hidden">
+                                                </i>
+                                                <i class="ki-outline ki-eye-slash hidden toggle-password-active:block">
+                                                </i>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="w-full">
@@ -453,8 +473,8 @@
                                             <div class="flex">
                                                 <img src="{{ asset('assets/img/password-reprompt.png') }}" alt="">
                                                 <div class="ml-2">
-                                                    <div class="font-semibold text-gray-900">Master Password Re-prompt</div>
-                                                    <div class="font-semibold text-gray-600">Require master password re-prompt to view the password.</div>
+                                                    <div class="font-semibold text-gray-900 text-md">Master Password Re-prompt</div>
+                                                    <div class="text-gray-600 text-sm">Require master password re-prompt to view the password.</div>
                                                 </div>
                                             </div>
                                             <input type="checkbox" name="master_password_required">
@@ -467,8 +487,8 @@
                                             <div class="flex">
                                                 <img src="{{ asset('assets/img/mfa-reprompt.png') }}" alt="">
                                                 <div class="ml-2">
-                                                    <div class="font-semibold text-gray-900">MFA Re-prompt</div>
-                                                    <div class="font-semibold text-gray-600">Require MFA re-prompt to view the password.</div>
+                                                    <div class="font-semibold text-gray-900 text-md">MFA Re-prompt</div>
+                                                    <div class="text-gray-600 text-sm">Require MFA re-prompt to view the password.</div>
                                                 </div>
                                             </div>
                                             <input type="checkbox" name="mfa_required">
@@ -482,7 +502,7 @@
                     <div class="flex px-5 gap-4 justify-end">
                         <button type="button" class="btn btn-light text-center close-modal">Cancel</button>
                         <button class="btn btn-primary">
-                            Create Password
+                            Save
                         </button>
                     </div>
                 </div>
