@@ -45,7 +45,7 @@
                             <div class="input font-normal">
                                 <i class="ki-outline ki-magnifier">
                                 </i>
-                                <input placeholder="Search Passwords" type="text" value="" autocomplete="new-password"/>
+                                <input placeholder="Search Passwords" type="text" value="" autocomplete="new-password" id="password-component-search"/>
                             </div>
                             <label class="switch">
                                 <span class="switch-label">
@@ -68,231 +68,13 @@
                     <!-- end: toolbar -->
                     <!-- begin: cards -->
                     <div id="projects_cards">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-7.5">
-                            @foreach($passwords as $password)
-                                <div class="card p-7.5">
-                                    <div class="flex items-center justify-between mb-3 lg:mb-6">
-                                        <div class="flex items-center justify-center size-[50px] rounded-lg bg-gray-100">
-                                            <img alt="" src="{{ $password->favicon_url }}"/>
-                                        </div>
-                                        <div class="flex">
-                                            <span class="badge badge-primary badge-outline">Private</span>
-                                            <div class="menu" data-menu="true">
-                                                <div
-                                                    class="menu-item" data-menu-item-offset="0, 10px"
-                                                    data-menu-item-placement="bottom-end" data-menu-item-toggle="dropdown"
-                                                    data-menu-item-trigger="click|lg:click"
-                                                >
-                                                    <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
-                                                        <i class="ki-filled ki-dots-vertical">
-                                                        </i>
-                                                    </button>
-                                                    <div class="menu-dropdown menu-default w-full max-w-[200px]" data-menu-dismiss="true">
-                                                        <div class="menu-item">
-                                                            <a class="menu-link" href="{{ $password->url }}" target="_blank">
-                                                                <span class="menu-icon">
-                                                                    <i class="ki-outline ki-exit-right-corner text-gray-600"></i>
-                                                                </span>
-                                                                <span class="menu-title">
-                                                                    Launch
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="menu-item">
-                                                            <button type="button" class="menu-link">
-                                                                <span class="menu-icon">
-                                                                    <i class="ki-outline ki-copy">
-                                                                    </i>
-                                                                </span>
-                                                                <span class="menu-title">
-                                                                    Copy Email
-                                                                </span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="menu-item">
-                                                            <button class="menu-link" type="button">
-                                                                <span class="menu-icon">
-                                                                    <i class="ki-outline ki-copy">
-                                                                    </i>
-                                                                </span>
-                                                                <span class="menu-title">
-                                                                    Copy Password
-                                                                </span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="menu-item">
-                                                            <button class="menu-link" data-modal-toggle="#report_user_modal">
-                                                                <span class="menu-icon">
-                                                                    <i class="ki-outline ki-exit-up">
-                                                                    </i>
-                                                                </span>
-                                                                <span class="menu-title">
-                                                                    Share Password
-                                                                </span>
-                                                            </button>
-                                                        </div>
-                                                        <form action="{{ route('deletePassKey') }}" method="POST">
-                                                            @csrf
-                                                            <div class="menu-item">
-                                                                <input type="hidden" name="id" value="{{ $password->id }}">
-                                                                <button type="button" class="menu-link save-changes">
-                                                                    <span class="menu-icon">
-                                                                        <i class="ki-outline ki-trash" style="color: #F8285A">
-                                                                        </i>
-                                                                    </span>
-                                                                    <span class="menu-title">
-                                                                        Delete
-                                                                    </span>
-                                                                </button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-col mb-3 lg:mb-6">
-                                        <button
-                                            class="text-left text-lg font-semibold text-gray-900 hover:text-primary-active mb-px open-edit-modal"
-                                            data-id="{{ $password->id }}"
-                                            data-password="{{ $password->master_password_required }}"
-                                            data-mfa="{{ $password->mfa_required }}"
-                                        >{{ $password->name }}
-                                        </button>
-                                        <span class="text-sm font-medium text-gray-600">{{ $password->account_name }}</span>
-                                    </div>
-                                    <div class="flex items-center gap-5 mb-3.5 lg:mb-7">
-                                        <span class="text-sm font-medium text-gray-500">
-                                            Created:
-                                            <span class="text-sm font-semibold text-gray-700">{{ date('M d', strtotime($password->created_at)) }}</span>
-                                        </span>
-                                        <span class="text-sm font-medium text-gray-500">
-                                            Used:
-                                            <span class="text-sm font-semibold text-gray-700">Dec 21</span>
-                                        </span>
-                                    </div>
-                                    <div class="progress-status" data-length="{{ strlen($password->password) }}">
-                                        <div class="progress h-1.5">
-                                            <div class="progress-bar">
-                                            </div>
-                                        </div>
-                                        <div class="text-right text-warning progress-text text-sm">Medium</div>
-                                    </div>
-                                </div>
-                            @endforeach
+                        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-7.5" id="search-component-pass-results-card">
+                            @include('user.password.password-component', ['passwords' => $passwords])
                         </div>
                     </div>
-                    <!-- end: cards -->
-                    <!-- begin: list -->
-                    <div class="hidden" id="projects_list">
-                        <div class="flex flex-col gap-5 lg:gap-7.5">
-                            @foreach($passwords as $password)
-                                <div class="card p-7">
-                                    <div class="flex items-center flex-wrap justify-between gap-5">
-                                        <div class="flex items-center gap-3.5">
-                                            <div class="flex items-center justify-center size-14 shrink-0 rounded-lg bg-gray-100">
-                                                <img alt="" class="" src="{{ $password->favicon_url }}"/>
-                                            </div>
-                                            <div class="flex flex-col">
-                                                <button
-                                                    class="text-lg text-left font-semibold text-gray-900 hover:text-primary-active mb-px open-edit-modal"
-                                                    data-id="{{ $password->id }}"
-                                                    data-password="{{ $password->master_password_required }}"
-                                                    data-mfa="{{ $password->mfa_required }}"
-                                                >
-                                                    {{ $password->name }}
-                                                </button>
-                                                <span class="text-sm font-medium text-gray-600">
-                                                    {{ $password->account_name }}
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center flex-wrap gap-5 lg:gap-14">
-                                            <div class="flex items-center flex-wrap gap-5 lg:gap-14">
-                                                <span class="badge badge-primary badge-outline">
-                                                    Private
-                                                </span>
-                                                <div class="progress-status" data-length="{{ strlen($password->password) }}">
-                                                    <div class="progress h-1.5 w-36">
-                                                        <div class="progress-bar">
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-right progress-text text-sm">Medium</div>
-                                                </div>
-                                                <div>
-                                                    <div class="text-gray-600 font-medium text-sm">Created:</div>
-                                                    <div class="text-sm font-semibold text-gray-700">{{ date('M d', strtotime($password->created_at)) }}</div>
-                                                </div>
-                                                <div>
-                                                    <a target="_blank" href="{{ $password->url }}">
-                                                        <i class="ki-outline ki-exit-right-corner text-2xl text-gray-700"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-center gap-2 lg:gap-20">
-                                                <div class="menu" data-menu="true">
-                                                    <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
-                                                        <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
-                                                            <i class="ki-filled ki-dots-vertical text-xl">
-                                                            </i>
-                                                        </button>
-                                                        <div class="menu-dropdown menu-default w-full max-w-[200px]" data-menu-dismiss="true">
-                                                            <div class="menu-item">
-                                                                <a class="menu-link" href="#">
-                                                                    <span class="menu-icon">
-                                                                        <i class="ki-outline ki-copy">
-                                                                        </i>
-                                                                    </span>
-                                                                        <span class="menu-title">
-                                                                        Copy Email
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="menu-item">
-                                                                <a class="menu-link" href="#">
-                                                                    <span class="menu-icon">
-                                                                        <i class="ki-outline ki-copy">
-                                                                        </i>
-                                                                    </span>
-                                                                        <span class="menu-title">
-                                                                        Copy Password
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="menu-item">
-                                                                <a class="menu-link" data-modal-toggle="#share_password_modal" href="#">
-                                                                    <span class="menu-icon">
-                                                                        <i class="ki-outline ki-exit-up">
-                                                                        </i>
-                                                                    </span>
-                                                                        <span class="menu-title">
-                                                                        Share Password
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <form action="{{ route('deletePassKey') }}" method="POST">
-                                                                @csrf
-                                                                <input type="hidden" name="id" value="{{ $password->id }}">
-                                                                <div class="menu-item">
-                                                                    <button class="menu-link save-changes" type="button">
-                                                                        <span class="menu-icon">
-                                                                            <i class="ki-outline ki-trash" style="color: #F8285A">
-                                                                            </i>
-                                                                        </span>
-                                                                        <span class="menu-title">
-                                                                            Delete
-                                                                        </span>
-                                                                    </button>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
+                    <div id="projects_list" class="hidden">
+                        <div class="flex flex-col gap-5 lg:gap-7.5" id="search-component-pass-results-list">
+                            @include('user.password.password-component-list', ['passwords' => $passwords])
                         </div>
                     </div>
                     <!-- end: list -->
@@ -574,26 +356,7 @@
         });
 
         $(document).ready(function() {
-            $('.progress-bar').each(function() {
-                let width = $(this).closest('.progress-status').attr('data-length');
-
-                if (width < 6) {
-                    $(this).css('background-color', '#F8285A');
-                    $(this).css('width', '20%');
-                    $(this).closest('.progress-status').find('.progress-text').css('color', '#F8285A');
-                    $(this).closest('.progress-status').find('.progress-text').text('Low');
-                } else if (width >= 6 && width < 10) {
-                    $(this).css('background-color', '#F6B100');
-                    $(this).css('width', '50%');
-                    $(this).closest('.progress-status').find('.progress-text').css('color', '#F6B100');
-                    $(this).closest('.progress-status').find('.progress-text').text('Medium');
-                } else {
-                    $(this).css('background-color', '#17C653');
-                    $(this).css('width', '100%');
-                    $(this).closest('.progress-status').find('.progress-text').css('color', '#17C653');
-                    $(this).closest('.progress-status').find('.progress-text').text('Strong');
-                }
-            })
+            passLevel();
 
             $('#share_button').click(function() {
                 $('#share_password_modal').show();
@@ -622,6 +385,78 @@
                     })
                 }, 2000);
             });
+
+            let passComponentTimeout = null;
+            $('#password-component-search').on('input', function() {
+                clearTimeout(passComponentTimeout);
+                let query = $(this).val();
+
+                passComponentTimeout = setTimeout(function() {
+                    $.ajax({
+                        url: '{{ route('searchPassComponentCard') }}',
+                        method: 'POST',
+                        data: {
+                            query: query,
+                            _token: '{{ csrf_token() }}'
+                        },
+                        success: function(response) {
+                            $('#search-component-pass-results-card').html(response);
+                            passLevel();
+                        },
+                    });
+                    $.ajax({
+                        url: '{{ route('searchPassComponentList') }}',
+                        method: 'POST',
+                        data: {
+                            query: query,
+                            _token: '{{ csrf_token() }}'
+                        },
+                        success: function(response) {
+                            $('#search-component-pass-results-list').html(response);
+                            passLevel();
+                        },
+                    })
+                });
+            });
+
+            function passLevel() {
+                $('.progress-bar').each(function() {
+                    let password = $(this).closest('.progress-status').attr('data-password');
+                    let length = password.length;
+                    let hasUpper = /[A-Z]/.test(password);
+                    let hasLower = /[a-z]/.test(password);
+                    let hasNumber = /[0-9]/.test(password);
+                    let hasSpecial = /[!@#$%^&*]/.test(password);
+                    let isSequential = /(.)\1{2,}/.test(password); // Проверка на повторяющиеся символы
+
+                    let score = 0;
+
+                    if (length >= 8) score++;
+                    if (hasUpper) score++;
+                    if (hasLower) score++;
+                    if (hasNumber) score++;
+                    if (hasSpecial) score++;
+                    if (!isSequential) score++;
+
+                    let width = (score / 6) * 100;
+
+                    $(this).css('width', width + '%');
+
+                    if (score <= 2) {
+                        $(this).css('background-color', '#F8285A');
+                        $(this).closest('.progress-status').find('.progress-text').css('color', '#F8285A');
+                        $(this).closest('.progress-status').find('.progress-text').text('Low');
+                    } else if (score > 2 && score <= 4) {
+                        $(this).css('background-color', '#F6B100');
+                        $(this).closest('.progress-status').find('.progress-text').css('color', '#F6B100');
+                        $(this).closest('.progress-status').find('.progress-text').text('Medium');
+                    } else {
+                        $(this).css('background-color', '#17C653');
+                        $(this).closest('.progress-status').find('.progress-text').css('color', '#17C653');
+                        $(this).closest('.progress-status').find('.progress-text').text('Strong');
+                    }
+                });
+            }
         });
     </script>
 @endsection

@@ -153,15 +153,51 @@
 <script>
     var APP_URL = "{{ env('APP_URL') }}";
 
-    function copy(auth, text) {
-        const $temp = $('<textarea>');
-        $('body').append($temp);
-
-        $temp.val(text).select();
-
-        document.execCommand('copy');
-
-        $temp.remove();
+    function copy(text, id = null) {
+        if (id) {
+            $.ajax({
+                url: '{{ route('getOnePassword') }}',
+                type: 'POST',
+                data: {
+                    id: id,
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function (response) {
+                    navigator.clipboard.writeText(response.payload.password).then(function () {
+                        toastr.options = {
+                            preventDuplicates: true,
+                            timeOut: 15000,
+                            extendedTimeOut: 15000, //Set the timeout to 2 minutes (2 * 60,000 milliseconds)
+                        }
+                        toastr.success("Copied Successfully");
+                    }).catch(function (error) {
+                        toastr.options = {
+                            preventDuplicates: true,
+                            timeOut: 15000,
+                            extendedTimeOut: 15000, //Set the timeout to 2 minutes (2 * 60,000 milliseconds)
+                        }
+                        toastr.error("Something went wrong.");
+                    });
+                    $('#check_master_password').hide();
+                }
+            })
+        } else {
+            navigator.clipboard.writeText(text).then(function () {
+                toastr.options = {
+                    preventDuplicates: true,
+                    timeOut: 15000,
+                    extendedTimeOut: 15000, //Set the timeout to 2 minutes (2 * 60,000 milliseconds)
+                }
+                toastr.success("Copied Successfully");
+            }).catch(function (error) {
+                toastr.options = {
+                    preventDuplicates: true,
+                    timeOut: 15000,
+                    extendedTimeOut: 15000, //Set the timeout to 2 minutes (2 * 60,000 milliseconds)
+                }
+                toastr.error("Something went wrong.");
+            });
+        }
     }
 
     function showStep(step) {
@@ -171,6 +207,29 @@
 
     $(document).ready(function() {
         let formSubmit;
+
+        $('.copy-password').click(function() {
+            $('#check_master_password').attr('data-action', 'copy');
+            $('#check_master_password').attr('data-mfa', $(this).attr('data-mfa'));
+            $('#check_master_password').attr('data-id', $(this).attr('data-id'));
+            $('#check_master_password').attr('data-password', $(this).attr('data-password'));
+
+            if ($(this).attr('data-password') == 1) {
+                $('#check_master_password').show();
+                showStep('step-1');
+            } else {
+                if ($(this).attr('data-mfa') == 1) {
+                    @if(@$gId || $user->two_factor_email || $user->two_factor_phone)
+                        $('#check_master_password').show();
+                        showStep('step-2');
+                    @else
+                        copy('', $(this).data('id'));
+                    @endif
+                } else {
+                    copy('', $(this).data('id'));
+                }
+            }
+        });
 
         $('.save-changes').click(function() {
             formSubmit = $(this).closest('form');
@@ -182,8 +241,8 @@
         $('.open-edit-modal').click(function() {
             $('#check_master_password').attr('data-action', 'edit');
             $('#check_master_password').attr('data-id', $(this).data('id'));
-            $('#check_master_password').show();
             $('#check_master_password').attr('data-mfa', $(this).attr('data-mfa'));
+            $('#check_master_password').show();
 
             if ($(this).attr('data-password') == 1) {
                 showStep('step-1');
@@ -238,7 +297,7 @@
                                 }
                             } else if (action === 'edit') {
                                 let mfaRequired = $('#check_master_password').attr('data-mfa');
-                                console.log(mfaRequired);
+
                                 if (response.mfa_auth && mfaRequired == 1) {
                                     showStep('step-2');
                                 } else {
@@ -249,6 +308,14 @@
                                     showStep('step-2');
                                 } else {
                                     create2FAModal();
+                                }
+                            } else if (action === 'copy') {
+                                let mfaRequired = $('#check_master_password').attr('data-mfa');
+
+                                if (response.mfa_auth && mfaRequired == 1) {
+                                    showStep('step-2');
+                                } else {
+                                    copy('', $('#check_master_password').attr('data-id'));
                                 }
                             }
                         } else {
@@ -291,6 +358,8 @@
                                 editPassword();
                             } else if (action === 'two-factor') {
                                 create2FAModal();
+                            } else if (action === 'copy') {
+                                copy('', $('#check_master_password').attr('data-id'));
                             }
                         }
                     }
