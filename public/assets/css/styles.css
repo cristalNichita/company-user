@@ -5144,6 +5144,9 @@ label.rating-label {
 .min-w-72 {
     min-width: 18rem;
 }
+.min-w-app-card {
+    min-width: 26rem;
+}
 
 .min-w-\[1000px\] {
     min-width: 1000px;
@@ -5606,6 +5609,10 @@ label.rating-label {
 
 .gap-7 {
     gap: 1.75rem;
+}
+
+.gap-app-card {
+    gap: 10rem;
 }
 
 .gap-7\.5 {

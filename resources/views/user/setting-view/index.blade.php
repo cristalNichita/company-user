@@ -54,7 +54,7 @@
                                         </td>
                                         <td class="min-w-16 text-center">
                                             <a class="btn btn-sm btn-icon btn-clear btn-primary" href="#">
-                                                <i class="ki-filled ki-notepad-edit">
+                                                <i class="ki-outline ki-notepad-edit">
                                                 </i>
                                             </a>
                                         </td>
@@ -68,7 +68,7 @@
                                         </td>
                                         <td class="text-center">
                                             <a class="btn btn-sm btn-icon btn-clear btn-primary" href="#">
-                                                <i class="ki-filled ki-notepad-edit">
+                                                <i class="ki-outline ki-notepad-edit">
                                                 </i>
                                             </a>
                                         </td>
@@ -82,7 +82,7 @@
                                         </td>
                                         <td class="text-center">
                                             <a class="btn btn-sm btn-icon btn-clear btn-primary" href="#">
-                                                <i class="ki-filled ki-notepad-edit">
+                                                <i class="ki-outline ki-notepad-edit">
                                                 </i>
                                             </a>
                                         </td>
