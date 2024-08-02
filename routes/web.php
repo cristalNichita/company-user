@@ -170,6 +170,8 @@ Route::middleware(['auth', 'checkUser'])->group(function () {
     Route::get('/getPasswordCloudAjax/{id}', 'User\PasswordController@getPasswordCloudAjax')->name('getPasswordCloudAjax');
     Route::post('get-one-password', 'User\PasswordController@getOnePassword')->name('getOnePassword');
     Route::post('search-passwords', 'User\PasswordController@searchPasswords')->name('searchPasswords');
+    Route::post('search-password-component-card', 'User\PasswordController@searchPassComponentCard')->name('searchPassComponentCard');
+    Route::post('search-password-component-list', 'User\PasswordController@searchPassComponentlist')->name('searchPassComponentList');
 
     //Front Passkey Controller
     Route::get('index', 'User\PasskeyController@index')->name('passkey.index');

@@ -24,7 +24,7 @@ class PasswordController extends Controller
     {
         $user = Auth::user();
 
-        $passwords = Password::where('user_id', $user->id)->with('user')->get();
+        $passwords = Password::where('user_id', $user->id)->with('user')->orderBy('created_at')->get();
 
         $gId = $user->google2fa_secret;
 
@@ -201,6 +201,28 @@ class PasswordController extends Controller
             }
 
             return response()->json(['error' => 'No password found!', 'status' => false]);
+    }
+
+    public function searchPassComponentCard(Request $request): string
+    {
+        if (strlen($request->input('query')) > 0) {
+            $results = Password::where('name', 'like', '%' . $request->input('query') . '%')->where('user_id', Auth::id())->get();
+        } else {
+            $results = Password::where('user_id', Auth::id())->with('user')->orderBy('created_at')->get();
+        }
+
+        return view('user.password.password-component', ['passwords' => $results])->render();
+    }
+
+    public function searchPassComponentList(Request $request): string
+    {
+        if (strlen($request->input('query')) > 0) {
+            $results = Password::where('name', 'like', '%' . $request->input('query') . '%')->where('user_id', Auth::id())->get();
+        } else {
+            $results = Password::where('user_id', Auth::id())->with('user')->orderBy('created_at')->get();
+        }
+
+        return view('user.password.password-component-list', ['passwords' => $results])->render();
     }
 
 }
