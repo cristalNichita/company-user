@@ -135,7 +135,7 @@
                                                             @csrf
                                                             <div class="menu-item">
                                                                 <input type="hidden" name="id" value="{{ $password->id }}">
-                                                                <button type="button" class="menu-link save-changes" data-modal-toggle="#report_user_modal">
+                                                                <button type="button" class="menu-link save-changes">
                                                                     <span class="menu-icon">
                                                                         <i class="ki-outline ki-trash" style="color: #F8285A">
                                                                         </i>
@@ -271,8 +271,10 @@
                                                                 </a>
                                                             </div>
                                                             <form action="{{ route('deletePassKey') }}" method="POST">
+                                                                @csrf
+                                                                <input type="hidden" name="id" value="{{ $password->id }}">
                                                                 <div class="menu-item">
-                                                                    <button class="menu-link save-changes">
+                                                                    <button class="menu-link save-changes" type="button">
                                                                         <span class="menu-icon">
                                                                             <i class="ki-outline ki-trash" style="color: #F8285A">
                                                                             </i>

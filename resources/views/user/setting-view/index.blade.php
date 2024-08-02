@@ -38,9 +38,9 @@
                                     <div class="text-gray-600 text-sm">Central Hub for Personal Customization</div>
                                 </div>
                                 <div class="flex items-center gap-2">
-                                    <button type="button" class="btn btn-primary choose-mfa-btn font-normal">
+                                    <a class="btn btn-primary font-normal" href="{{ route('settingForm') }}">
                                         Edit
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                             <div class="card-table scrollable-x-auto pb-3">
@@ -50,10 +50,10 @@
                                             Name
                                         </td>
                                         <td class="min-w-48 w-full text-gray-700">
-                                            Jason Tatum
+                                            {{ $user->fullname }}
                                         </td>
                                         <td class="min-w-16 text-center">
-                                            <a class="btn btn-sm btn-icon btn-clear btn-primary" href="#">
+                                            <a class="btn btn-sm btn-icon btn-clear btn-primary" href="{{ route('settingForm') }}">
                                                 <i class="ki-filled ki-notepad-edit">
                                                 </i>
                                             </a>
@@ -64,10 +64,10 @@
                                             Email
                                         </td>
                                         <td class="text-gray-700">
-                                            yaroslav.lanovyi@nikcode.net
+                                            {{ $user->email }}
                                         </td>
                                         <td class="text-center">
-                                            <a class="btn btn-sm btn-icon btn-clear btn-primary" href="#">
+                                            <a class="btn btn-sm btn-icon btn-clear btn-primary" href="{{ route('settingForm') }}">
                                                 <i class="ki-filled ki-notepad-edit">
                                                 </i>
                                             </a>
@@ -78,10 +78,10 @@
                                             Password
                                         </td>
                                         <td class="text-gray-700">
-                                            Password was last changed on 01.08.24
+                                            Password was last changed on {{ date('d.m.Y', strtotime($user->updated_at)) }}
                                         </td>
                                         <td class="text-center">
-                                            <a class="btn btn-sm btn-icon btn-clear btn-primary" href="#">
+                                            <a class="btn btn-sm btn-icon btn-clear btn-primary" href="{{ route('settingForm') }}">
                                                 <i class="ki-filled ki-notepad-edit">
                                                 </i>
                                             </a>
@@ -99,9 +99,9 @@
                                     <div class="text-gray-600 text-sm">Action when will be executed when your vault will take the vault timeout action.</div>
                                 </div>
                                 <div class="flex items-center gap-2">
-                                    <button type="button" class="btn btn-primary choose-mfa-btn font-normal">
+                                    <a href="{{ route('settingForm') }}" class="btn btn-primary font-normal">
                                         Edit
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                             <form action="" method="POST">
