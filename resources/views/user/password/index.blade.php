@@ -386,9 +386,12 @@
                                                     <div class="text-gray-600 text-sm">Require MFA re-prompt to view the specific password.</div>
                                                 </div>
                                             </div>
-                                            <input type="checkbox" name="mfa_required">
+                                            <input type="checkbox" name="mfa_required" @if (!$gId && !$user->two_factor_email && !$user->two_factor_phone) disabled @endif>
                                         </label>
                                     </div>
+                                    @if (!$gId && !$user->two_factor_email && !$user->two_factor_phone)
+                                        <div class="text-2sm badge badge-warning badge-outline w-full">Please, connect two factor authentication to use "MFA Re-prompt.</div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -491,9 +494,12 @@
                                                     <div class="text-gray-600 text-sm">Require MFA re-prompt to view the password.</div>
                                                 </div>
                                             </div>
-                                            <input type="checkbox" name="mfa_required">
+                                            <input type="checkbox" name="mfa_required" @if (!$gId && !$user->two_factor_email && !$user->two_factor_phone) disabled @endif>
                                         </label>
                                     </div>
+                                    @if (!$gId && !$user->two_factor_email && !$user->two_factor_phone)
+                                        <div class="text-2sm badge badge-warning badge-outline w-full">Please, connect two factor authentication to use "MFA Re-prompt.</div>
+                                    @endif
                                 </div>
                             </div>
                         </div>

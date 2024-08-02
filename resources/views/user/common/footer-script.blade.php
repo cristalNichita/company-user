@@ -189,7 +189,11 @@
                 showStep('step-1');
             } else {
                 if ($(this).attr('data-mfa') == 1) {
-                    showStep('step-2');
+                    @if(@$gId || $user->two_factor_email || $user->two_factor_phone)
+                        showStep('step-2');
+                    @else
+                        editPassword();
+                    @endif
                 } else {
                     editPassword();
                 }
