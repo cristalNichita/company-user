@@ -53,7 +53,7 @@
                                             {{ $user->fullname }}
                                         </td>
                                         <td class="min-w-16 text-center">
-                                            <a class="btn btn-sm btn-icon btn-clear btn-primary" href="#">
+                                            <a class="btn btn-sm btn-icon btn-clear btn-primary" href="{{ route('settingForm') }}">
                                                 <i class="ki-outline ki-notepad-edit">
                                                 </i>
                                             </a>
@@ -67,7 +67,7 @@
                                             {{ $user->email }}
                                         </td>
                                         <td class="text-center">
-                                            <a class="btn btn-sm btn-icon btn-clear btn-primary" href="#">
+                                            <a class="btn btn-sm btn-icon btn-clear btn-primary" href="{{ route('settingForm') }}">
                                                 <i class="ki-outline ki-notepad-edit">
                                                 </i>
                                             </a>
@@ -81,7 +81,7 @@
                                             Password was last changed on {{ date('d.m.Y', strtotime($user->updated_at)) }}
                                         </td>
                                         <td class="text-center">
-                                            <a class="btn btn-sm btn-icon btn-clear btn-primary" href="#">
+                                            <a class="btn btn-sm btn-icon btn-clear btn-primary" href="{{ route('settingForm') }}">
                                                 <i class="ki-outline ki-notepad-edit">
                                                 </i>
                                             </a>
@@ -99,9 +99,9 @@
                                     <div class="text-gray-600 text-sm">Action when will be executed when your vault will take the vault timeout action.</div>
                                 </div>
                                 <div class="flex items-center gap-2">
-                                    <button type="button" class="btn btn-primary choose-mfa-btn font-normal">
+                                    <a type="button" class="btn btn-primary font-normal" href="{{ route('settingForm') }}">
                                         Edit
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                             <form action="" method="POST">
