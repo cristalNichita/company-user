@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Password;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\BrowserExtension;
@@ -22,50 +23,10 @@ class DashboardController extends Controller
     public function index(): View
     {
         $user = Auth::user();
+        $passwordsCount = Password::count();
+        $usersCount = User::count();
 
-        $totalUploadedPassword = UserRole::where('userId', $user->id)
-            ->leftJoin('organization_custom_roles', 'organization_custom_roles.id', 'user_roles.roleId')
-            ->value('numberPassword');
-
-        $allotedPassword = $totalUploadedPassword;
-        $totalUploadedPassword = 0;
-
-        $totalInstalledMfa = 0;
-        if ($user->google2fa_secret) {
-            $totalInstalledMfa++;
-        }
-        if (($user->twoFactorEmail || $user->twoFactorMobileNumber) && ($user->isKeyManagerOTP == 1)) {
-            $totalInstalledMfa++;
-        }
-        if ($user->faceIdImage) {
-            $totalInstalledMfa++;
-        }
-
-        $totalExtension = BrowserExtension::where(['user_id' => $user->id])->count();
-        $safari = BrowserExtension::where(['user_id' => $user->id, 'browser' => 'Safari'])->count();
-        $chrome = BrowserExtension::where(['user_id' => $user->id, 'browser' => 'Chrome'])->count();
-        $opera = BrowserExtension::where(['user_id' => $user->id, 'browser' => 'Opera'])->count();
-        $firefox = BrowserExtension::where(['user_id' => $user->id, 'browser' => 'Firefox'])->count();
-
-        return view('user.dashboard.dashboard-2', compact(
-            'dashboardData',
-            'allHsmDevice',
-            'totalUploadedPassword',
-            'user',
-            'usedPassword',
-            'totalStorage',
-            'availableStorage',
-            'usedStorage',
-            'allotedPassword',
-            'totalInstalledMfa',
-            'safari',
-            'chrome',
-            'opera',
-            'firefox',
-            'totalExtension',
-            'totalUserPasswordCount',
-            'totalOrganizerPasswordCount'
-        ));
+        return view('user.dashboard.dashboard-2', compact('user', 'passwordsCount', 'usersCount'));
     }
 
 
