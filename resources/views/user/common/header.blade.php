@@ -15,13 +15,13 @@
             class="flex [.header_&amp;]:below-lg:hidden items-center gap-1.25 text-xs lg:text-sm font-medium mb-2.5 lg:mb-0"
             data-reparent="true" data-reparent-mode="prepend|lg:prepend"
             data-reparent-target="#content_container|lg:#header_container">
-            <span class="text-gray-600">
-                My Account
+            <span class="text-gray-600 breadcrumb-primary">
+
             </span>
             <i class="ki-filled ki-right text-gray-500 text-3xs">
             </i>
-            <span class="text-gray-700">
-                Settings
+            <span class="text-gray-700 breadcrumb-second">
+
             </span>
         </div>
         <div class="flex items-center gap-2 lg:gap-3.5">

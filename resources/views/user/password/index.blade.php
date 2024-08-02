@@ -350,6 +350,7 @@
 
 @section('js')
     <script>
+        changeBreadcrumbs('General', 'Passwords');
 
         $('#create_new_password_btn').click(function() {
             $('#create_password_modal').show();

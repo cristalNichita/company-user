@@ -189,5 +189,7 @@
                 return false;
             }
         });
+
+        changeBreadcrumbs('General', 'Settings');
     </script>
 @endsection

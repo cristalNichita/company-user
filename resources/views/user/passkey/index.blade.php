@@ -164,3 +164,9 @@
         </div>
     </div>
 @endsection
+
+@section('js')
+    <script>
+        changeBreadcrumbs('General', 'MFA');
+    </script>
+@endsection

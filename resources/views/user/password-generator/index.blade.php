@@ -122,6 +122,7 @@
 
 @section('js')
     <script>
+        changeBreadcrumbs('General', 'Password Generator');
         $(document).ready(function() {
             $('#pass-length').on('input', function() {
                 $('#min-pass-length').val($(this).val());

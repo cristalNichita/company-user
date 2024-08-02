@@ -259,6 +259,7 @@
 
 @section('js')
     <script>
+        changeBreadcrumbs('Admin', 'Dashboard');
 
         var securityChartOptions = {
             series: [70],

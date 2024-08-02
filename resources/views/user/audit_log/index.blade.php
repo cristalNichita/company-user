@@ -2758,3 +2758,9 @@
         </main>
     </div>
 @endsection
+
+@section('js')
+    <script>
+        changeBreadcrumbs('Admin', 'Audit Logs');
+    </script>
+@endsection

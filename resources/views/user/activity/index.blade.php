@@ -1207,3 +1207,9 @@
         </main>
     </div>
 @endsection
+
+@section('js')
+    <script>
+        changeBreadcrumbs('General', 'Activity');
+    </script>
+@endsection

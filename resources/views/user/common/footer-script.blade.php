@@ -148,6 +148,13 @@
 <script src="{{ asset('assets/js/core.bundle.js') }}"></script>
 <script src="{{ asset('assets/js/apexcharts.min.js') }}"></script>
 
+<script>
+    function changeBreadcrumbs(first, second) {
+        $('.breadcrumb-primary').html(first);
+        $('.breadcrumb-second').html(second);
+    }
+</script>
+
 @yield('js')
 
 <script>
