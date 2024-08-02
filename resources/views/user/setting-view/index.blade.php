@@ -64,7 +64,7 @@
                                             Email
                                         </td>
                                         <td class="text-gray-700">
-                                            yaroslav.lanovyi@nikcode.net
+                                            {{ $user->email }}
                                         </td>
                                         <td class="text-center">
                                             <a class="btn btn-sm btn-icon btn-clear btn-primary" href="#">
@@ -78,7 +78,7 @@
                                             Password
                                         </td>
                                         <td class="text-gray-700">
-                                            Password was last changed on 01.08.24
+                                            Password was last changed on {{ date('d.m.Y', strtotime($user->updated_at)) }}
                                         </td>
                                         <td class="text-center">
                                             <a class="btn btn-sm btn-icon btn-clear btn-primary" href="#">
